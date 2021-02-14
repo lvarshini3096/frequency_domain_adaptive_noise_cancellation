@@ -7,4 +7,4 @@
 - Observe the SNR and Error Convergence curves to select the optimum N and mu values. 
 
 
-![Diagram](https://github.com/lvarshini3096/frequency_domain_adaptive_noise_cancellation/issues/1#issue-808050332)
+![Diagram](https://user-images.githubusercontent.com/78391474/107889434-8b13ea80-6ee0-11eb-93be-bfaecebc55f3.jpg)
