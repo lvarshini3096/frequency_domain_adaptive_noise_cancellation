@@ -32,16 +32,14 @@ The core of the system is the **Normalized Frequency Domain LMS (NLMS)** algorit
    Both input signals (`d(n)` and `x(n)`) are divided into non-overlapping blocks of **N** samples and transformed into the frequency domain using the **Fast Fourier Transform (FFT)**, yielding `D(K)` and `X(K)`.
 
 2. **Noise Estimation**  
-   The frequency-domain adaptive filter weights **B** are used to estimate the noise component:
-   $$
-   \hat{\mathbf{D}}_{\text{noise}}(\mathbf{K}) = \mathbf{X}_{\text{diag}}(\mathbf{K}) \cdot \mathbf{B}
-   $$
+   The frequency-domain adaptive filter weights B are used to estimate the noise component:
+
+   **Ď_noise(K) = X_diag(K) · B**
 
 3. **Error Calculation**  
    The filtered output (error signal) is computed as:
-   $$
-   \mathbf{E}(\mathbf{K}) = \mathbf{D}(\mathbf{K}) - \hat{\mathbf{D}}_{\text{noise}}(\mathbf{K})
-   $$
+
+   **E(K) = D(K) − Ď_noise(K)**
 
 4. **Weight Update**  
    The adaptive filter weights are updated using a gradient descent (LMS/NLMS) approach to minimize the power of the error:
