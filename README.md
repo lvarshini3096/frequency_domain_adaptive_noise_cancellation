@@ -10,6 +10,8 @@ This project implements an **Adaptive Noise Cancellation (ANC)** system based on
 
 > *"Frequency-Domain and Multirate Adaptive Filtering"* — John J. Shynk
 
+![Diagram](https://user-images.githubusercontent.com/78391474/107889434-8b13ea80-6ee0-11eb-93be-bfaecebc55f3.jpg)
+
 The system processes two input signals:
 
 - **Primary Input (`d(n)` — `mic1.wav`)**: The desired speech signal contaminated with background noise (e.g., *speech + noise*).  
@@ -43,9 +45,9 @@ The core of the system is the **Normalized Frequency Domain LMS (NLMS)** algorit
 
 4. **Weight Update**  
    The adaptive filter weights are updated using a gradient descent (LMS/NLMS) approach to minimize the power of the error:
-   $$
-   \mathbf{B}_{\text{new}} = \mathbf{B}_{\text{old}} + 2 \cdot \mu \cdot \mathbf{X}_{\text{diag}}(\mathbf{K})^* \cdot \mathbf{E}(\mathbf{K})
-   $$
+
+   **B_new = B_old + 2 × μ × X_diag(K)\* × E(K)**
+
 
 5. **Time Domain Conversion**  
    The frequency-domain error `E(K)` is transformed back to the time domain using the **Inverse FFT (IFFT)** to obtain the final clean output signal `e(n)`.
@@ -108,7 +110,3 @@ To tune performance:
 - Haykin, S. (2002). *Adaptive Filter Theory* (4th Edition). **Prentice Hall**.
 
 ---
-
-
-
-![Diagram](https://user-images.githubusercontent.com/78391474/107889434-8b13ea80-6ee0-11eb-93be-bfaecebc55f3.jpg)
